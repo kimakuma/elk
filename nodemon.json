@@ -1,5 +1,5 @@
 {
     "ignore": [".git", "node_modules"],
     "watch": ["./"],
-    "exec": "node app.js"
+    "exec": "node server.js"
 }
