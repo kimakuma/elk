@@ -2,7 +2,7 @@ import * as searchModel from './search-model.js';
 
 export const searchServiceFn = async (params) => {
     const queryDTO = {
-        filter: params.filter ? params.filter : undefined,
+        filter: params.filter || undefined,
         keyword: params.keyword,
         size: params.size
     }
@@ -29,14 +29,15 @@ export const searchServiceFn = async (params) => {
 }
 
 export const postServiceFn = async (bodys) => {
+    const timeElapsed = Date.now();
+    const now = new Date(timeElapsed);
     const bodyDTO = {
         title: bodys.title,
         content: bodys.content,
-        reporter: bodys.reporter ? bodys.reporter : '무명의 작성자',
-        category: bodys.category ? bodys.category : '기타',
-        id: bodys.id,
+        reporter: bodys.reporter || '무명의 작성자',
+        category: bodys.category || '기타',
         nid: bodys.nid,
-        start_dttm: bodys.start_dttm,
+        start_dttm: bodys.start_dttm || now,
         update_dttm: bodys.update_dttm
     }
 

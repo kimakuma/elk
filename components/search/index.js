@@ -5,5 +5,5 @@ import * as schema from './config/request-schema.js';
 
 export const router = express.Router();
 
-router.get('/', validate(schema.searchSchema), controller.searchControllerFn);
-router.post('/', validate(schema.postSchema), controller.postControllerFn);
+router.get('/search', validate(schema.searchSchema), controller.searchControllerFn);
+router.post('/write', validate(schema.postSchema), controller.postControllerFn);

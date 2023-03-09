@@ -2,7 +2,7 @@ export const conf = () => {
     return {
         index: ['sedaily'],
         field: {
-            search: ['category', 'reporter', 'title', 'content'],
+            search: ['category.korean', 'reporter', 'title.korean', 'content.korean'],
             highlight: ['category', 'reporter', 'title', 'content'],
             result: ['title']
         },

@@ -12,7 +12,7 @@ export const searchModelFn = async (params) => {
         body.query.bool.must.push({
             multi_match: {
                 fields: 
-                    filter == undefined ? queryDAO.field.search : filter,
+                    filter == undefined ? queryDAO.field.search : filter + '.korean',
                 query: keyword
             }
         })
@@ -41,14 +41,12 @@ export const postModelFn = async (bodys) => {
         const index = postDAO.index;
         const docType = postDAO.type;
         const body = JSON.stringify(bodys);
-        const _id = bodys.nid;
     
         const postResult = await write(
             'post',
             index,
             docType,
-            body,
-            _id
+            body
         );
 
         return { postResult, index };
