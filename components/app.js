@@ -9,7 +9,7 @@ dotenv.config();
 export const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({extended: false})); // object parsing
+app.use(express.urlencoded({extended: false}));
 
 app.use('/article', articleRouter);
 
